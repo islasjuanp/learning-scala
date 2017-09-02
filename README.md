@@ -6,3 +6,4 @@
 3. Sum of multiples
 4. Leap
 5. Space Age
+6. grade-school

@@ -1,7 +1,14 @@
-name := "Learning Scala"
+name := MyBuild.NamePrefix + "root"
 
 version := "1.0"
 
-scalaVersion := "2.12.1"
+scalaVersion := "2.11.7"
 
-libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.1" % "test"
+resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
+
+lazy val common = project.
+  settings(Common.settings: _*)
+
+lazy val api = project.
+  settings(Common.settings: _*).
+  settings(libraryDependencies ++= Dependencies.bob)
